@@ -1,0 +1,95 @@
+
+/* t40: Kakuranger flanking title in preview and OBS production (in-box: card overflow:hidden clips translate(-100%)) */
+.card .card-header,.subathon-container .sub_judul{position:relative!important;padding-left:3.9em!important;padding-right:3.9em!important}
+.card .card-header::before,.card .card-header::after,.subathon-container .sub_judul::before,.subathon-container .sub_judul::after{
+  content:""!important;position:absolute!important;top:50%!important;width:3.4em!important;height:3.4em!important;
+  background:url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/hiasan.png") center/contain no-repeat!important;
+  pointer-events:none!important;z-index:6!important;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08);
+}
+.card .card-header::before,.subathon-container .sub_judul::before{left:.35em!important;transform:translateY(-50%)!important;animation:kr40-wchar-l .5s cubic-bezier(.2,.9,.25,1.14) .25s both,kr40-wbob 3.2s ease-in-out infinite alternate!important}
+.card .card-header::after,.subathon-container .sub_judul::after{right:.35em!important;transform:translateY(-50%) scaleX(-1)!important;animation:kr40-wchar-r .5s cubic-bezier(.2,.9,.25,1.14) .25s both,kr40-wbob 3.2s ease-in-out infinite alternate .4s!important}
+@keyframes kr40-wchar-l{from{opacity:0;transform:translate(-28px,-50%)}to{opacity:1;transform:translateY(-50%)}}
+@keyframes kr40-wchar-r{from{opacity:0;transform:translate(28px,-50%) scaleX(-1)}to{opacity:1;transform:translateY(-50%) scaleX(-1)}}
+@keyframes kr40-wbob{0%,100%{filter:drop-shadow(0 3px 8px rgba(0,0,0,.6)) saturate(1.08)}50%{filter:drop-shadow(0 9px 14px rgba(0,0,0,.72)) saturate(1.16)}}
+body{background:transparent!important;margin:0;overflow:hidden;font-family:'Trebuchet MS','Segoe UI',sans-serif}
+.w-queue .card{box-sizing:border-box;position:relative;isolation:isolate;overflow:hidden;border:1px solid #D92B35;border-radius:12px;background-image:linear-gradient(rgba(74,13,18,.25),rgba(26,8,70,.45)),url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/bg.png"),radial-gradient(ellipse at 12% 18%,rgba(127,21,27,.34) 0 7px,transparent 8px),radial-gradient(ellipse at 78% 28%,rgba(185,31,42,.28) 0 5px,transparent 6px),radial-gradient(ellipse at 26% 82%,rgba(38,7,11,.22) 0 6px,transparent 7px),linear-gradient(135deg,#4A0D12,#190205);color:#FFF3E3;box-shadow:0 0 25px rgba(127,21,27,.34),inset 0 0 22px rgba(127,21,27,.34);animation:kr40-queue-in .6s cubic-bezier(.2,.9,.3,1.15) forwards,kr40-queue-drift 13s ease-in-out infinite alternate,kr40-queue-glow 3.4s ease-in-out infinite}
+@keyframes kr40-queue-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes kr40-queue-drift{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}to{background-position:0 0,0 0,10px -18px,-8px 14px,7px -11px,-10px 8px}}
+@keyframes kr40-queue-glow{0%,100%{box-shadow:0 10px 24px rgba(38,7,11,.46),inset 0 1px 0 rgba(255,255,255,.06)}50%{box-shadow:0 14px 34px rgba(38,7,11,.56),inset 0 1px 0 rgba(255,255,255,.09)}}
+@keyframes kr40-queue-sweep{from{transform:translateX(-120%)}to{transform:translateX(340%)}}
+.w-queue .card::after{content:"";position:absolute;z-index:4;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(127,21,27,.40),transparent);animation:kr40-hair 5s ease-in-out infinite;pointer-events:none}
+@keyframes kr40-queue-float{0%,100%{opacity:.25}50%{opacity:.8}}
+.w-queue .card .card-header h4,.w-queue .card .card-header h4 strong{color:#FFF3E3!important;text-shadow:0 0 10px rgba(127,21,27,.34)!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;font-size:20px!important;letter-spacing:1.5px;text-transform:uppercase;animation:kr40-queue-pulse 2.4s ease-in-out infinite}
+@keyframes kr40-queue-pulse{0%,100%{text-shadow:0 0 7px rgba(127,21,27,.34)}50%{text-shadow:0 0 18px rgba(127,21,27,.34),0 0 30px rgba(127,21,27,.44)}}
+.w-queue .card .show_donate{width:100%;border-collapse:separate;border-spacing:0 5px!important;margin:0!important}
+.w-queue .card .show_donate td{padding:7px 9px!important;border:0!important;color:#FFF3E3!important;background:rgba(38,7,11,.18)!important;font-family:'Trebuchet MS','Segoe UI',sans-serif!important;font-size:14px!important;border-radius:8px}
+.w-queue .card .show_donate tr{opacity:0;animation:kr40-queue-row .45s ease forwards}
+.w-queue .card .show_donate tr:nth-child(1){animation-delay:0.12s}
+.w-queue .card .show_donate tr:nth-child(2){animation-delay:0.24s}
+.w-queue .card .show_donate tr:nth-child(3){animation-delay:0.36s}
+.w-queue .card .show_donate tr:nth-child(4){animation-delay:0.48s}
+.w-queue .card .show_donate tr:nth-child(5){animation-delay:0.60s}
+.w-queue .card .show_donate tr:nth-child(6){animation-delay:0.72s}
+.w-queue .card .show_donate tr:nth-child(7){animation-delay:0.84s}
+.w-queue .card .show_donate tr:nth-child(8){animation-delay:0.96s}
+.w-queue .card .show_donate tr:nth-child(9){animation-delay:1.08s}
+.w-queue .card .show_donate tr:nth-child(10){animation-delay:1.20s}
+.w-queue .card .show_donate td:first-child{width:34px;color:#F9E2A7!important;font-weight:900!important;text-align:center}
+.w-queue .card .show_donate tr:first-child .text-limit{color:#FFF3E3!important;text-shadow:0 0 9px rgba(127,21,27,.34)!important;animation:kr40-queue-champ 2s ease-in-out 1.6s infinite}
+.w-queue .card .show_donate .text-limit{color:#FFF3E3!important;font-weight:600!important}
+.w-queue .card .show_donate .text-limit-r{color:#F9E2A7!important;font-weight:800!important;text-align:right;white-space:nowrap}
+.w-queue .card .show_donate .empty{color:#B91F2A!important;font-style:italic;text-align:center!important}
+@keyframes kr40-queue-row{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:translateX(0)}}
+@keyframes kr40-queue-champ{0%,100%{text-shadow:0 0 8px rgba(127,21,27,.34)}50%{text-shadow:0 0 20px rgba(127,21,27,.34),0 0 34px rgba(127,21,27,.44)}}
+
+.w-queue .card .show_donate td{padding:7px 10px!important;text-align:left}
+.w-queue .card .show_donate td:first-child{width:36px;text-align:center}
+.w-queue .card .show_donate td:last-child{width:56%;text-align:right;white-space:normal;overflow-wrap:break-word;font-size:12.5px;line-height:1.25}
+.w-queue .card .show_donate .text-limit{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.w-queue .card .show_donate .text-limit-r{white-space:normal!important;overflow-wrap:break-word}
+.w-queue .card .show_donate tr:first-child td{background:rgba(127,21,27,.08)!important}
+
+@keyframes kr40-hair{0%,100%{opacity:.25}50%{opacity:.9}}
+
+/* t40 Kakuranger polish: center titles + thin bar */
+.w-queue .card .card-header{text-align:center!important}
+.w-queue .card .card-header h4,.card .card-header h4 strong{text-align:center}
+
+/* t40 Kakuranger polish: bubble accent + Kakuranger petir stripe */
+.w-top .card::before,.w-queue .card::before,.w-mile .card::before,.w-sub .subathon-container::before{content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:4px;background:repeating-linear-gradient(90deg,#D92B35 0 30px,#B91F2A 30px 60px,#7F151B 60px 90px);opacity:.92;pointer-events:none}
+.w-top .card::after,.w-queue .card::after,.w-mile .card::after,.w-sub .subathon-container::after{content:"";position:absolute;z-index:1;right:-30px;top:-30px;width:120px;height:2px;background:linear-gradient(90deg,transparent,rgba(217,43,53,.7),transparent);transform:rotate(-22deg);box-shadow:0 0 14px rgba(217,43,53,.55);animation:kr40-sheen 3.4s ease-in-out infinite alternate;pointer-events:none}
+@keyframes kr40-sheen{from{opacity:.15;transform:rotate(-22deg) translateX(-14px)}to{opacity:.8;transform:rotate(-22deg) translateX(14px)}}
+.w-top .card .show_donate td,.w-queue .card .show_donate td{background:rgba(26,8,70,.62)!important;border:1px solid rgba(217,43,53,.15)!important}
+.w-mile .card .progress-bar,.w-mile .card .progress-bars{background:linear-gradient(90deg,#D92B35,#B91F2A,#7F151B)!important;animation:kr40-mile-fill 2.8s ease-in-out infinite!important}
+@keyframes kr40-mile-fill{0%,100%{filter:brightness(1)}50%{filter:brightness(1.22)}}
+
+/* t40 centered widget titles */
+.card-header,.card-header h4,.card-header h4 strong,.sub_judul,.sub_judul strong{text-align:center!important}
+.w-top .card .card-header,.w-mile .card .card-header,.w-queue .card .card-header{text-align:center!important}
+.w-top .card .card-header h4,.w-mile .card .card-header h4,.w-queue .card .card-header h4,.w-top .card .card-header h4 strong,.w-mile .card .card-header h4 strong,.w-queue .card .card-header h4 strong{text-align:center!important}
+.w-sub .subathon-container,.w-sub .subathon-container .sub_judul,.w-sub .subathon-container .sub_judul strong{text-align:center!important}
+#__next > div .chakra-heading,#__next > div .css-1fezxbg,#__next > div .css-1gz06j0,#__next > div .css-1gz06j0 .chakra-text{text-align:center!important}
+#__next > div .chakra-heading,#__next > div .css-1fezxbg,#__next > div .css-1gz06j0 .chakra-text{display:block!important;width:100%!important}
+
+/* t40 KAKURANGER badge on every widget card */
+.card-header h4::after,.sub_judul::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='13'%3E%3Ctext x='0' y='10' font-family='sans-serif' font-size='9' font-weight='800' letter-spacing='1.4'%3E%3Ctspan fill='%23D92B35'%3EKAKURANGER %3C/tspan%3E%3Ctspan fill='%23D8AA45'%3E· %3C/tspan%3E%3Ctspan fill='%237F151B'%3ERED%3C/tspan%3E%3C/text%3E%3C/svg%3E");display:block;width:160px;height:13px;margin:4px auto 0}
+#__next > div .chakra-heading::after,#__next > div .css-1fezxbg::after,#__next > div .css-1gz06j0 .chakra-text::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='13'%3E%3Ctext x='0' y='10' font-family='sans-serif' font-size='9' font-weight='800' letter-spacing='1.4'%3E%3Ctspan fill='%23D92B35'%3EKAKURANGER %3C/tspan%3E%3Ctspan fill='%23D8AA45'%3E· %3C/tspan%3E%3Ctspan fill='%237F151B'%3ERED%3C/tspan%3E%3C/text%3E%3C/svg%3E");display:block;width:160px;height:13px;margin:4px auto 0}
+
+/* t40 top donator title */
+.w-top .card .card-header h4,.w-top .card .card-header h4 strong{font-size:0!important}
+.w-top .card .card-header h4::before{content:"KAKURANGER LEADERBOARD";font-size:19px!important;letter-spacing:1.5px;text-transform:uppercase;color:#F6D58A!important;text-shadow:0 2px 8px rgba(0,0,0,.85)}
+#__next > div > .chakra-heading{font-size:0!important}
+#__next > div > .chakra-heading::before{content:"KAKURANGER LEADERBOARD";font-size:19px!important;letter-spacing:1.5px;text-transform:uppercase;color:#F6D58A!important;text-shadow:0 2px 8px rgba(0,0,0,.85)}
+
+/* t40 Kakuranger: bg + sakura overlay + mirrored hiasan above layer */
+.card,.subathon-container{position:relative!important;overflow:hidden!important;background-image:linear-gradient(rgba(25,2,5,.38),rgba(25,2,5,.58)),url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/sakura.png"),url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/bg.png")!important;background-size:cover,cover,cover!important;background-position:center,center,center!important;background-blend-mode:normal,screen,normal!important;}
+.card .card-header,.subathon-container .sub_judul{position:relative!important;padding-left:3.7em!important;padding-right:3.7em!important;z-index:4!important}
+.card .card-header::before,.card .card-header::after,.subathon-container .sub_judul::before,.subathon-container .sub_judul::after{content:""!important;position:absolute!important;top:50%!important;width:3.05em!important;height:3.6em!important;background-position:center!important;background-repeat:no-repeat!important;background-size:contain!important;pointer-events:none!important;z-index:8!important;filter:drop-shadow(0 3px 8px rgba(217,43,53,.62))!important;animation:kr40-wglow 3.8s ease-in-out infinite alternate!important}
+.card .card-header::before,.subathon-container .sub_judul::before{left:.22em!important;background-image:url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/hiasan.png")!important;transform:translateY(-50%)!important}
+.card .card-header::after,.subathon-container .sub_judul::after{right:.22em!important;background-image:url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/hiasan-kanan.png")!important;transform:translateY(-50%)!important}
+.card .card-header h4,.card .card-header h4 strong,.sub_judul,.sub_judul strong{color:#FFF3E3!important;text-shadow:0 2px 8px #190205!important}
+@keyframes kr40-wglow{0%{filter:drop-shadow(0 3px 8px rgba(217,43,53,.48)) brightness(.96)}100%{filter:drop-shadow(0 8px 15px rgba(246,213,138,.82)) brightness(1.1)}}
+#ms_container{position:relative!important;overflow:hidden!important;background-image:linear-gradient(rgba(25,2,5,.42),rgba(25,2,5,.62)),url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/sakura.png"),url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/bg.png")!important;background-size:cover,cover,cover!important;background-position:center,center,center!important;background-blend-mode:normal,screen,normal!important}
+#ms_container .text-container{position:relative!important;z-index:4!important}
+#ms_container .text-container::before,#ms_container .text-container::after{background-image:url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/hiasan.png")!important;background-position:center!important;background-size:contain!important;background-repeat:no-repeat!important;filter:drop-shadow(0 3px 8px rgba(217,43,53,.62))!important}
+#ms_container .text-container::after{background-image:url("https://raw.githubusercontent.com/MasAjie12/kakuranger-red-alert-assets/refs/heads/main/hiasan-kanan.png")!important;transform:translateY(-50%)!important}

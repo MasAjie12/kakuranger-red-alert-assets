@@ -14,7 +14,7 @@ def build(platform, token, tag):
     return (f'<!-- KAKURANGER MERAH ALERT — {platform} --><div class="kr40-card">'
             f'<img class="kr40-bg" src="{BG}" alt=""><img class="kr40-sakura" src="{SAKURA}" alt=""><div class="kr40-veil"></div>'
             f'<img class="kr40-hiasan kr40-left" src="{LEFT}" alt=""><img class="kr40-hiasan kr40-right" src="{RIGHT}" alt=""><div class="kr40-body">'
-            '<div class="kr40-kicker">KAKURANGER RED</div><div class="kr40-amount">{amount}</div>' + tag +
+            '<div class="kr40-kicker">SAWERAN MASUK</div><div class="kr40-amount">{amount}</div>' + tag +
             f'<div class="kr40-who">{token}</div><div class="kr40-msg">{{message}}</div></div><div class="kr40-mark">忍</div><div class="kr40-frame"></div><div class="kr40-shine"></div></div>')
 
 for slug, token, tag in (("sociabuzz", "{supporter}", '<div class="kr40-tag">{from_text}</div>'), ("saweria", "{donator}", "")):
